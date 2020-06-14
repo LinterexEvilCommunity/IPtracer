@@ -3,28 +3,27 @@
 
 """
     This file is part of IPtracer tool.
+    C
     https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPtracer - Retrieve IPtracer information 
+    IPGeoLocation - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__ = 'LinterexEvil Community'
+__author__ = 'Shellstar'
 
 from datetime import datetime
 import os
@@ -79,23 +78,23 @@ class Logger:
             print('[{}] {}'.format(Green('**'), message))
     
     
-    def PrintIPtracer(self, IPtracer):
-        """print IPtracer information to terminal"""
-        self.PrintResult('\nTarget', IPtracer.Query)
-        self.PrintResult('IP', IPtracer.IP)
-        self.PrintResult('ASN', IPtracer.ASN)
-        self.PrintResult('City', IPtracer.City)
-        self.PrintResult('Country', IPtracer.Country)
-        self.PrintResult('Country Code', IPtracer.CountryCode)
-        self.PrintResult('ISP', IPtracer.ISP)
-        self.PrintResult('Latitude', str(IPtracer.Latitude))
-        self.PrintResult('Longtitude', str(IPtracer.Longtitude))
-        self.PrintResult('Organization', IPtracer.Organization)
-        self.PrintResult('Region Code', IPtracer.Region)
-        self.PrintResult('Region Name', IPtracer.RegionName)
-        self.PrintResult('Timezone', IPtracer.Timezone)
-        self.PrintResult('Zip Code', IPtracer.Zip)
-        self.PrintResult('Google Maps', IPtracer.GoogleMapsLink)
+    def PrintIPGeoLocation(self, ipGeoLocation):
+        """print IP Geolocation information to terminal"""
+        self.PrintResult('\nTarget', ipGeoLocation.Query)
+        self.PrintResult('IP', ipGeoLocation.IP)
+        self.PrintResult('ASN', ipGeoLocation.ASN)
+        self.PrintResult('City', ipGeoLocation.City)
+        self.PrintResult('Country', ipGeoLocation.Country)
+        self.PrintResult('Country Code', ipGeoLocation.CountryCode)
+        self.PrintResult('ISP', ipGeoLocation.ISP)
+        self.PrintResult('Latitude', str(ipGeoLocation.Latitude))
+        self.PrintResult('Longtitude', str(ipGeoLocation.Longtitude))
+        self.PrintResult('Organization', ipGeoLocation.Organization)
+        self.PrintResult('Region Code', ipGeoLocation.Region)
+        self.PrintResult('Region Name', ipGeoLocation.RegionName)
+        self.PrintResult('Timezone', ipGeoLocation.Timezone)
+        self.PrintResult('Zip Code', ipGeoLocation.Zip)
+        self.PrintResult('Google Maps', ipGeoLocation.GoogleMapsLink)
         print()
         #.encode('cp737', errors='replace').decode('cp737')
     
