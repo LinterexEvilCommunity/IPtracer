@@ -3,9 +3,10 @@
 
 """
     This file is part of IPtracer tool.
+    C
     https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPtracer - Retrieve IPtracer information 
+    IPGeoLocation - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
@@ -24,7 +25,7 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__ = 'LinterexEvil Communityi'
+__author__ = 'Shellstar'
 
 
 class UserAgentFileEmptyError(Exception):
