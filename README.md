@@ -1,16 +1,16 @@
 # IPtracer
 
-#LinterexEvil Community
+# LinterexEvil Community
 
 A tool to retrieve IP LinterexEvil Community
 Powered by ip-api
 
-#Requirements
+# Requirements
 Python 3.x
 termcolor
 colorama
 
-#Download/Installation
+# Download/Installation
 
 git clone https://github.com/LinterexEvilCommunity/IPtracer
 
@@ -23,7 +23,7 @@ easy_install3 pip
 
 pip3 install -r requirements.txt
 
-#Features
+# Features
 
 Retrieve IP or Domain IPtracer.
 Retrieve your own IP IPtracer.
@@ -60,7 +60,7 @@ Timezone
 
 Zip Code
 
-#Usage
+# Usage
 
 $ ./ip2IPtracer.py
 usage: IPtracer.py [-h] [-m] [-t TARGET] [-T file] [-u User-Agent]
@@ -70,4 +70,4 @@ usage: IPtracer.py [-h] [-m] [-t TARGET] [-T file] [-u User-Agent]
 if You Like Can Pay me.... 
                      ~My Blockchain adress:1JbGADGXhL89LoTKWBrbjgSVcFEPatdVEj
 
-#Creater:Tejas (Shellstar)
+# Creater:Tejas (Shellstar)
