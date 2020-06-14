@@ -24,7 +24,7 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__   = 'LinterexEvil Community(Shellstar)'
+__author__   = 'LinterexEvil Community'
 __Instagram__  = '@linterexevilcommunity'
 __version__  = '2.0.4'
 
