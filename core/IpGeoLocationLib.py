@@ -2,41 +2,40 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPtracer tool.
-    https://github.com/LinterexEvilCommunity/IPtracer
+    This file is part of IPGeoLocation tool.
+    Copyright (C) 2015-2016 @maldevel
+    https://github.com/maldevel/IPGeoLocation
     
-    IPtracer - Retrieve IPtracer information 
+    IPGeoLocation - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__ = 'LinterexEvilCommunity'
+__author__ = 'maldevel'
 
 from core.Utils import Utils
 import json, random, os
 from core.MyExceptions import *
-from core.IPtracer import IPtracer
+from core.IpGeoLocation import IpGeoLocation
 from time import sleep
 from core.FileExporter import FileExporter
 from urllib.parse import urlparse
 from urllib import request 
 
-class IPtracerLib:
-    """Retrieve IPtracer information from http://ip-api.com"""
+class IpGeoLocationLib:
+    """Retrieve IP Geolocation information from http://ip-api.com"""
     
     def __init__(self, target, logger, noprint=False, nolog=False, verbose=False):    
         self.URL = 'http://ip-api.com'
@@ -90,10 +89,10 @@ class IPtracerLib:
             #retrieve information
             results = None
             if self.TargetsFile:
-                results = self.__retrievelocations()
+                results = self.__retrieveGeolocations()
             
             else:
-                results = self.__retrievelocation(self.Target)
+                results = self.__retrieveGeolocation(self.Target)
             
             #export information
             if exportToCSVFile and not os.path.exists(exportToCSVFile) and os.access(os.path.dirname(exportToCSVFile), os.W_OK):
@@ -106,7 +105,7 @@ class IPtracerLib:
                 self.__exportResultsToTXT(results, exportToTXTFile)
             
             #open location in Google Maps with default browser
-            if googleMaps and type(results) is IPtracer:
+            if googleMaps and type(results) is IpGeoLocation:
                 self.Utils.openLocationInGoogleMaps(results)
                 
             return True
@@ -161,7 +160,7 @@ class IPtracerLib:
         self.Logger.Print('Saving results to {} CSV file.'.format(csvFile))
         success = False
         
-        if type(objToExport) is IPtracer:
+        if type(objToExport) is IpGeoLocation:
             success = fileExporter.ExportToCSV(objToExport, csvFile)
         elif type(objToExport) is list:
             success = fileExporter.ExportListToCSV(objToExport, csvFile)
@@ -176,7 +175,7 @@ class IPtracerLib:
         self.Logger.Print('Saving results to {} XML file.'.format(xmlFile))
         success = False
         
-        if type(objToExport) is IPtracer:
+        if type(objToExport) is IpGeoLocation:
             success = fileExporter.ExportToXML(objToExport, xmlFile)
         elif type(objToExport) is list:
             success = fileExporter.ExportListToXML(objToExport, xmlFile)
@@ -191,7 +190,7 @@ class IPtracerLib:
         self.Logger.Print('Saving results to {} text file.'.format(txtFile))
         success = False
         
-        if type(objToExport) is IPtracer:
+        if type(objToExport) is IpGeoLocation:
             success = fileExporter.ExportToTXT(objToExport, txtFile)
         elif type(objToExport) is list:
             success = fileExporter.ExportListToTXT(objToExport, txtFile)
@@ -200,20 +199,20 @@ class IPtracerLib:
             self.Logger.PrintError('Saving results to {} text file failed.'.format(txtFile))
             
         
-    def __retrievelocations (self):
-        """Retrieve IPtracer for each target in the list"""
-        IPtracerObjs = []
+    def __retrieveGeolocations (self):
+        """Retrieve IP Geolocation for each target in the list"""
+        IpGeoLocObjs = []
                     
         for target in self.Targets:
-            IPtracercObjs.append(self.__retrieveIPtracer(target))
+            IpGeoLocObjs.append(self.__retrieveGeolocation(target))
             if len(self.Targets)>=150:
                 sleep(.500) #1/2 sec - ip-api will automatically ban any IP address doing over 150 requests per minute
                 
-        return IPtracerObjs
+        return IpGeoLocObjs
         
         
-    def __retrievelocation(self, target):
-        """Retrieve IPtracer for single target"""
+    def __retrieveGeolocation(self, target):
+        """Retrieve IP Geolocation for single target"""
         
         if not target:
             query = 'My IP'
