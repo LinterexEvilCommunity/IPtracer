@@ -24,7 +24,7 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__ = 'LinterexEvilCommunity(ShellStar)'
+__author__ = 'LinterexEvilCommunity'
 
 from core.Utils import Utils
 import json, random, os
