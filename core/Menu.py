@@ -25,26 +25,10 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__   = 'maldevel'
-__twitter__  = '@maldevel'
-__version__  = '2.0.4'
-__year__     = '2015-2016'
-
-
 from argparse import RawTextHelpFormatter
 import argparse, os
 from urllib.parse import urlparse
 from core.Logger import Red
-
-
-banner = """
-{0} 
-
-{1} Retrieve IP Geolocation information from ip-api.com
-{1} Copyright (c) {2} {3} ({4})
-{1} ip-api.com service will automatically ban any IP addresses doing over 150 requests per minute.
-
-""".format(Red('IPGeolocation ' + __version__), Red('--['), __year__, __author__, __twitter__)
 
 
 def checkFileRead(filename):
