@@ -2,11 +2,10 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPGeoLocation tool.
-    Copyright (C) 2015-2016 @maldevel
-    https://github.com/maldevel/IPGeoLocation
+    This file is part of IPtracer tool.
+    https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPGeoLocation - Retrieve IP Geolocation information 
+    IPtracer - Retrieve IPtracer information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
@@ -25,10 +24,9 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__   = 'maldevel'
-__twitter__  = '@maldevel'
+__author__   = 'LinterexEvil Community(Shellstar)
+__Instagram__  = '@linterexevilcommunity'
 __version__  = '2.0.4'
-__year__     = '2015-2016'
 
 
 from argparse import RawTextHelpFormatter
@@ -40,11 +38,11 @@ from core.Logger import Red
 banner = """
 {0} 
 
-{1} Retrieve IP Geolocation information from ip-api.com
-{1} Copyright (c) {2} {3} ({4})
+{1} Retrieve IPtracer information from ip-api.com
+{1} lo (c) {2} {3} ({4})
 {1} ip-api.com service will automatically ban any IP addresses doing over 150 requests per minute.
 
-""".format(Red('IPGeolocation ' + __version__), Red('--['), __year__, __author__, __twitter__)
+""".format(Red('IPtracer ' + __version__), Red('--['), __author__, __Instagram__)
 
 
 def checkFileRead(filename):
@@ -81,7 +79,7 @@ parser = argparse.ArgumentParser(description=banner, formatter_class=RawTextHelp
 parser.add_argument('-m', '--my-ip',  
                     dest='myip',
                     action='store_true', 
-                    help='Get Geolocation info for my IP address.')
+                    help='Get IPtracer info for my IP address.')
 
 parser.add_argument('-t', '--target',  
                     help='IP Address or Domain to be analyzed.')
@@ -96,8 +94,8 @@ parser.add_argument('-T', '--tlist',
 parser.add_argument('-u', '--user-agent', 
                     metavar='User-Agent', 
                     dest='uagent',
-                    default='IP2GeoLocation {}'.format(__version__), 
-                    help='Set the User-Agent request header (default: IP2GeoLocation {}).'.format(__version__))
+                    default='IPtracer {}'.format(__version__), 
+                    help='Set the User-Agent request header (default: IPtracer {}).'.format(__version__))
 
 parser.add_argument('-U', '--ulist', 
                     metavar='file', 
@@ -108,11 +106,11 @@ parser.add_argument('-U', '--ulist',
 #misc options
 parser.add_argument('-g', 
                     action='store_true', 
-                    help='Open IP location in Google maps with default browser.')
+                    help='Open IPtracer in Google maps with default browser.')
 
 parser.add_argument('--noprint', 
                     action='store_true', 
-                    help='IPGeolocation will print IP Geolocation info to terminal. It is possible to tell IPGeolocation not to print results to terminal with this option.')
+                    help='IPtracer will print IPtracer info to terminal. It is possible to tell IPtracer not to print results to terminal with this option.')
 
 parser.add_argument('-v', '--verbose', 
                     action='store_true', 
@@ -120,7 +118,7 @@ parser.add_argument('-v', '--verbose',
 
 parser.add_argument('--nolog', 
                     action='store_true', 
-                    help='IPGeolocation will save a .log file. It is possible to tell IPGeolocation not to save those log files with this option.')
+                    help='IPtracer will save a .log file. It is possible to tell IPtracer not to save those log files with this option.')
 
 
 #anonymity options
