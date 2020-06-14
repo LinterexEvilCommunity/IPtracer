@@ -2,11 +2,10 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPGeoLocation tool.
-    Copyright (C) 2015-2016 @maldevel
-    https://github.com/maldevel/IPGeoLocation
+    This file is part of IPtracer tool.
+     https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPGeoLocation - Retrieve IP Geolocation information 
+    IPtracer - Retrieve IPtracer information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
@@ -25,11 +24,11 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__  = 'maldevel'
+__author__  = 'LinterexEvil Community(Shellstar)'
 
 
 import sys, os
-from core.IpGeoLocationLib import IpGeoLocationLib
+from core.IPtracerLib import IPtracerLib
 from core.Logger import Logger
 from core.Menu import parser,args,banner
     
@@ -51,17 +50,17 @@ def main():
     
     #single target or multiple targets 
     if(args.target and args.tlist):
-        logger.PrintError("You can request Geolocation information either for a single target(-t) or a list of targets(-T). Not both!", args.nolog)
+        logger.PrintError("You can request IPtracer information either for a single target(-t) or a list of targets(-T). Not both!", args.nolog)
         sys.exit(2)
         
     #my ip address or single target
     if(args.target and args.myip):
-        logger.PrintError("You can request Geolocation information either for a single target(-t) or your own IP address. Not both!", args.nolog)
+        logger.PrintError("You can request IPtracer information either for a single target(-t) or your own IP address. Not both!", args.nolog)
         sys.exit(3)
         
     #multiple targets or my ip address
     if(args.tlist and args.myip):
-        logger.PrintError("You can request Geolocation information either for a list of targets(-T) or your own IP address. Not both!", args.nolog)
+        logger.PrintError("You can request IPtracer information either for a list of targets(-T) or your own IP address. Not both!", args.nolog)
         sys.exit(4)
     
     #single target and google maps only allowed
@@ -71,25 +70,25 @@ def main():
     
     #specify user-agent or random
     if(args.uagent and args.ulist):
-        logger.PrintError("You can either specify a user-agent string or let IPGeolocation pick random user-agent strings for you from a file.", args.nolog)
+        logger.PrintError("You can either specify a user-agent string or let IPtracer pick random user-agent strings for you from a file.", args.nolog)
         sys.exit(6)
         
     #specify proxy or random
     if(args.proxy and args.xlist):
-        logger.PrintError("You can either specify a proxy or let IPGeolocation pick random proxy connections for you from a file.", args.nolog)
+        logger.PrintError("You can either specify a proxy or let IPtracer pick random proxy connections for you from a file.", args.nolog)
         sys.exit(7)
         
         
     #init lib
-    ipGeoLocRequest = IpGeoLocationLib(args.target, logger, args.noprint)
+    IPtracerRequest = IPtracerLib(args.target, logger, args.noprint)
     
     print(banner)
     
     #retrieve information
-    if not ipGeoLocRequest.GetInfo(args.uagent, args.tlist, 
+    if not IPtracerRequest.GetInfo(args.uagent, args.tlist, 
                                      args.ulist, args.proxy, args.xlist,
                                      args.csv, args.xml, args.txt, args.g):
-        logger.PrintError("Retrieving IP Geolocation information failed.")
+        logger.PrintError("Retrieving IP IPtracer information failed.")
         sys.exit(8)
 
 
