@@ -3,7 +3,7 @@
 
 """
     This file is part of IPtracer tool.
-    https://github.com/maldevel/IPGeoLocation
+    https://github.com/LinterexEvilCommunity/IPtracer
     
     IPtracer - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
