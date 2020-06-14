@@ -3,30 +3,30 @@
 
 """
     This file is part of IPtracer tool.
+    C
     https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPtracer - Retrieve IPtracer information 
+    IPGeoLocation - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
-
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
-
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__   = 'LinterexEvil Community'
-__Instagram__  = '@linterexevilcommunity'
+__author__   = 'Shellstar'
+__instagram__  = '@linterexevilcommunityofficial'
 __version__  = '2.0.4'
+__year__     = '2020-2021'
 
 
 from argparse import RawTextHelpFormatter
@@ -37,12 +37,10 @@ from core.Logger import Red
 
 banner = """
 {0} 
-
-{1} Retrieve IPtracer information from ip-api.com
-{1} lo (c) {2} {3} ({4})
+{1} Retrieve IP Geolocation information from ip-api.com
+{1} Copyright (c) {2} {3} ({4})
 {1} ip-api.com service will automatically ban any IP addresses doing over 150 requests per minute.
-
-""".format(Red('IPtracer ' + __version__), Red('--['), __author__, __Instagram__)
+""".format(Red('IPGeolocation ' + __version__), Red('--['), __year__, __author__, __twitter__)
 
 
 def checkFileRead(filename):
@@ -79,7 +77,7 @@ parser = argparse.ArgumentParser(description=banner, formatter_class=RawTextHelp
 parser.add_argument('-m', '--my-ip',  
                     dest='myip',
                     action='store_true', 
-                    help='Get IPtracer info for my IP address.')
+                    help='Get Geolocation info for my IP address.')
 
 parser.add_argument('-t', '--target',  
                     help='IP Address or Domain to be analyzed.')
@@ -94,8 +92,8 @@ parser.add_argument('-T', '--tlist',
 parser.add_argument('-u', '--user-agent', 
                     metavar='User-Agent', 
                     dest='uagent',
-                    default='IPtracer {}'.format(__version__), 
-                    help='Set the User-Agent request header (default: IPtracer {}).'.format(__version__))
+                    default='IP2GeoLocation {}'.format(__version__), 
+                    help='Set the User-Agent request header (default: IP2GeoLocation {}).'.format(__version__))
 
 parser.add_argument('-U', '--ulist', 
                     metavar='file', 
@@ -106,11 +104,11 @@ parser.add_argument('-U', '--ulist',
 #misc options
 parser.add_argument('-g', 
                     action='store_true', 
-                    help='Open IPtracer in Google maps with default browser.')
+                    help='Open IP location in Google maps with default browser.')
 
 parser.add_argument('--noprint', 
                     action='store_true', 
-                    help='IPtracer will print IPtracer info to terminal. It is possible to tell IPtracer not to print results to terminal with this option.')
+                    help='IPGeolocation will print IP Geolocation info to terminal. It is possible to tell IPGeolocation not to print results to terminal with this option.')
 
 parser.add_argument('-v', '--verbose', 
                     action='store_true', 
@@ -118,7 +116,7 @@ parser.add_argument('-v', '--verbose',
 
 parser.add_argument('--nolog', 
                     action='store_true', 
-                    help='IPtracer will save a .log file. It is possible to tell IPtracer not to save those log files with this option.')
+                    help='IPGeolocation will save a .log file. It is possible to tell IPGeolocation not to save those log files with this option.')
 
 
 #anonymity options
