@@ -79,23 +79,23 @@ class Logger:
             print('[{}] {}'.format(Green('**'), message))
     
     
-    def PrintIPGeoLocation(self, ipGeoLocation):
-        """print IP Geolocation information to terminal"""
-        self.PrintResult('\nTarget', ipGeoLocation.Query)
-        self.PrintResult('IP', ipGeoLocation.IP)
-        self.PrintResult('ASN', ipGeoLocation.ASN)
-        self.PrintResult('City', ipGeoLocation.City)
-        self.PrintResult('Country', ipGeoLocation.Country)
-        self.PrintResult('Country Code', ipGeoLocation.CountryCode)
-        self.PrintResult('ISP', ipGeoLocation.ISP)
-        self.PrintResult('Latitude', str(ipGeoLocation.Latitude))
-        self.PrintResult('Longtitude', str(ipGeoLocation.Longtitude))
-        self.PrintResult('Organization', ipGeoLocation.Organization)
-        self.PrintResult('Region Code', ipGeoLocation.Region)
-        self.PrintResult('Region Name', ipGeoLocation.RegionName)
-        self.PrintResult('Timezone', ipGeoLocation.Timezone)
-        self.PrintResult('Zip Code', ipGeoLocation.Zip)
-        self.PrintResult('Google Maps', ipGeoLocation.GoogleMapsLink)
+    def PrintIPtracer(self, IPtracer):
+        """print IPtracer information to terminal"""
+        self.PrintResult('\nTarget', IPtracer.Query)
+        self.PrintResult('IP', IPtracer.IP)
+        self.PrintResult('ASN', IPtracer.ASN)
+        self.PrintResult('City', IPtracer.City)
+        self.PrintResult('Country', IPtracer.Country)
+        self.PrintResult('Country Code', IPtracer.CountryCode)
+        self.PrintResult('ISP', IPtracer.ISP)
+        self.PrintResult('Latitude', str(IPtracer.Latitude))
+        self.PrintResult('Longtitude', str(IPtracer.Longtitude))
+        self.PrintResult('Organization', IPtracer.Organization)
+        self.PrintResult('Region Code', IPtracer.Region)
+        self.PrintResult('Region Name', IPtracer.RegionName)
+        self.PrintResult('Timezone', IPtracer.Timezone)
+        self.PrintResult('Zip Code', IPtracer.Zip)
+        self.PrintResult('Google Maps', IPtracer.GoogleMapsLink)
         print()
         #.encode('cp737', errors='replace').decode('cp737')
     
