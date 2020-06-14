@@ -2,11 +2,10 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPGeoLocation tool.
-    Copyright (C) 2015-2016 @maldevel
-    https://github.com/maldevel/IPGeoLocation
+    This file is part of IPtracer tool.
+    https://github.com/LinterexEvilCommunity/IPtracer
     
-    IPGeoLocation - Retrieve IP Geolocation information 
+    IPtracer - Retrieve IPtracer information 
     Powered by http://ip-api.com
     
     This program is free software: you can redistribute it and/or modify
@@ -25,7 +24,7 @@
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__ = 'maldevel'
+__author__ = 'LinterexEvil Community(Shellstar)'
 
 from datetime import datetime
 import os
