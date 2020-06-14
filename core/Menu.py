@@ -2,9 +2,9 @@
 # encoding: UTF-8
 
 """
-    This file is part of IPtracer tool.
-    C
-    https://github.com/LinterexEvilCommunity/IPtracer
+    This file is part of IPGeoLocation tool.
+    Copyright (C) 2015-2016 @maldevel
+    https://github.com/maldevel/IPGeoLocation
     
     IPGeoLocation - Retrieve IP Geolocation information 
     Powered by http://ip-api.com
@@ -13,20 +13,22 @@
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
     (at your option) any later version.
+
     This program is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.
+
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
     
     For more see the file 'LICENSE' for copying permission.
 """
 
-__author__   = 'Shellstar'
-__instagram__  = '@linterexevilcommunityofficial'
+__author__   = 'maldevel'
+__twitter__  = '@maldevel'
 __version__  = '2.0.4'
-__year__     = '2020-2021'
+__year__     = '2015-2016'
 
 
 from argparse import RawTextHelpFormatter
@@ -37,9 +39,11 @@ from core.Logger import Red
 
 banner = """
 {0} 
+
 {1} Retrieve IP Geolocation information from ip-api.com
 {1} Copyright (c) {2} {3} ({4})
 {1} ip-api.com service will automatically ban any IP addresses doing over 150 requests per minute.
+
 """.format(Red('IPGeolocation ' + __version__), Red('--['), __year__, __author__, __twitter__)
 
 
@@ -147,4 +151,4 @@ parser.add_argument('-ex', '--xml',
                     help='Export results in XML format.')
 
 
-args = parser.parse_args()
+args = parser.parse_arg
